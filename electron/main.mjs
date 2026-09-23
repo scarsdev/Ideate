@@ -41,6 +41,12 @@ function createWindow() {
 
   mainWindow.once('ready-to-show', () => mainWindow.show())
 
+  mainWindow.webContents.on('render-process-gone', () => {
+    setTimeout(() => {
+      if (mainWindow && !mainWindow.isDestroyed()) mainWindow.reload()
+    }, 400)
+  })
+
   mainWindow.webContents.setWindowOpenHandler(({ url }) => {
     shell.openExternal(url)
     return { action: 'deny' }
