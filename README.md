@@ -19,6 +19,8 @@ as you browse. (Built as a faithful re-creation of the Gather app.)
 
 > This build is Apple Silicon (M-series) only.
 
+See [CHANGELOG.md](CHANGELOG.md) for everything that shipped in each release.
+
 ## What's inside
 
 - `src/` — the renderer (React + Vite)
