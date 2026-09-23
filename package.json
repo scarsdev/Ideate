@@ -1,0 +1,50 @@
+{
+  "name": "gatheros-clone",
+  "version": "0.1.0",
+  "description": "Local-first visual reference library for macOS",
+  "private": true,
+  "type": "module",
+  "main": "electron/main.mjs",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "vite build",
+    "start": "electron .",
+    "dist": "vite build && electron-builder --mac",
+    "pack": "vite build && electron-builder --mac --dir",
+    "test:sync": "node scripts/test-sync-server.mjs",
+    "test:sync:ui": "electron scripts/test-sync-ui.mjs",
+    "test:scraper": "electron scripts/test-x-scraper.mjs",
+    "test:video": "electron scripts/test-video-playback.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^32.2.5",
+    "electron-builder": "^25.1.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^5.4.11"
+  },
+  "build": {
+    "appId": "co.gatheros.clone",
+    "productName": "Gather",
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.productivity",
+      "darkModeSupport": true
+    },
+    "extraResources": [
+      "sync-extension"
+    ]
+  }
+}

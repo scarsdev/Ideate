@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gather Capture — Options</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <header>
+      <span class="logo">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round">
+          <circle cx="12" cy="12" r="9.5" />
+          <path d="M12 2.5 12 12l8.2 5" />
+          <path d="M21.2 8.2 12 12 6.5 4.5" />
+          <path d="M2.8 15.8 12 12l-4 9" />
+        </svg>
+      </span>
+      <h1>Gather Capture</h1>
+    </header>
+
+    <p class="lead">
+      Paste the server URL and access token from <b>Settings → Syncing</b> in Gather. The token keeps
+      the local server private to this extension.
+    </p>
+
+    <label>
+      Server URL
+      <input id="serverUrl" type="text" placeholder="http://127.0.0.1:47821" />
+    </label>
+
+    <label>
+      Access token
+      <input id="token" type="text" placeholder="32-character token" />
+    </label>
+
+    <label>
+      Instagram username <span class="opt">(optional)</span>
+      <input id="igUser" type="text" placeholder="handle only, e.g. paradisoxo" />
+    </label>
+    <p class="hint">
+      Just the handle — no @ and no URL. Used to open <b>instagram.com/&lt;handle&gt;/saved</b> for
+      the import. X needs no username: it reads <b>x.com/i/bookmarks</b> from whatever account is
+      already logged into this browser.
+    </p>
+
+    <label>
+      Auto-import new saves <span class="opt">(after the first import completes)</span>
+      <select id="watchMinutes">
+        <option value="10">Check every 10 minutes</option>
+        <option value="15">Check every 15 minutes</option>
+        <option value="30">Check every 30 minutes</option>
+        <option value="60">Check every hour</option>
+        <option value="0">Off</option>
+      </select>
+    </label>
+
+    <div class="actions">
+      <button class="primary" id="save">Save</button>
+      <button id="test">Test connection</button>
+    </div>
+
+    <p class="status" id="status"></p>
+
+    <script src="options.js"></script>
+  </body>
+</html>

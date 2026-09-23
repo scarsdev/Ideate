@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gather Capture</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <span class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round">
+          <circle cx="12" cy="12" r="9.5" />
+          <path d="M12 2.5 12 12l8.2 5" />
+          <path d="M21.2 8.2 12 12 6.5 4.5" />
+          <path d="M2.8 15.8 12 12l-4 9" />
+        </svg>
+      </span>
+      <h1>Gather</h1>
+      <span class="version" id="version">v1.0.0</span>
+      <button class="close" id="close" title="Close">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M6 6l12 12M18 6 6 18" />
+        </svg>
+      </button>
+    </header>
+
+    <main>
+      <button class="row" id="capturePage">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+            <rect x="3" y="4.5" width="18" height="15" rx="3" />
+            <path d="M3 9h18" />
+            <circle cx="6.2" cy="6.8" r="0.7" fill="currentColor" stroke="none" />
+          </svg>
+        </span>
+        <span class="txt">
+          <span class="title">Capture page</span>
+          <span class="sub">Visible browser area</span>
+        </span>
+      </button>
+
+      <button class="row" id="captureArea">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+            <path d="M4 8.5V6a2 2 0 0 1 2-2h2.5" />
+            <path d="M15.5 4H18a2 2 0 0 1 2 2v2.5" />
+            <path d="M20 15.5V18a2 2 0 0 1-2 2h-2.5" />
+            <path d="M8.5 20H6a2 2 0 0 1-2-2v-2.5" />
+          </svg>
+        </span>
+        <span class="txt">
+          <span class="title">Capture area</span>
+          <span class="sub">Drag to select a region</span>
+        </span>
+      </button>
+
+      <button class="row" id="saveUrl">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+            <path d="M10 13.5a4 4 0 0 1 0-5.6l2.2-2.2a4 4 0 0 1 5.6 5.6l-1 1" />
+            <path d="M14 10.5a4 4 0 0 1 0 5.6l-2.2 2.2a4 4 0 0 1-5.6-5.6l1-1" />
+          </svg>
+        </span>
+        <span class="txt">
+          <span class="title">Save URL</span>
+          <span class="sub">This page as a link</span>
+        </span>
+      </button>
+
+      <div class="sep"></div>
+
+      <button class="row" id="importX">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.8 3h3.1l-6.8 7.8L22 21h-6.2l-4.9-5.8L5.4 21H2.2l7.3-8.3L2 3h6.3l4.4 5.3L17.8 3zm-1.1 16.1h1.7L7.4 4.8H5.6l11.1 14.3z" />
+          </svg>
+        </span>
+        <span class="txt">
+          <span class="title">Import bookmarks</span>
+          <span class="sub">Backfill your X bookmarks</span>
+        </span>
+      </button>
+
+      <button class="row" id="importIG">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.1" cy="6.9" r="1.1" fill="currentColor" stroke="none" />
+          </svg>
+        </span>
+        <span class="txt">
+          <span class="title">Import saved</span>
+          <span class="sub">Backfill your Instagram saves</span>
+        </span>
+      </button>
+
+      <button class="row" id="importPin">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M12 21s-6.2-5.5-6.2-10.4a6.2 6.2 0 1 1 12.4 0C18.2 15.5 12 21 12 21z" />
+            <circle cx="12" cy="10.4" r="2.2" />
+          </svg>
+        </span>
+        <span class="txt">
+          <span class="title">Import Pinterest</span>
+          <span class="sub">Backfill your boards and pins</span>
+        </span>
+      </button>
+
+      <button class="row" id="importCosmos">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <circle cx="12" cy="12" r="8.5" />
+            <circle cx="12" cy="8" r="1.2" fill="currentColor" stroke="none" />
+            <circle cx="16" cy="12" r="1.2" fill="currentColor" stroke="none" />
+            <circle cx="12" cy="16" r="1.2" fill="currentColor" stroke="none" />
+            <circle cx="8" cy="12" r="1.2" fill="currentColor" stroke="none" />
+          </svg>
+        </span>
+        <span class="txt">
+          <span class="title">Import saves</span>
+          <span class="sub">Backfill your Cosmos saves</span>
+        </span>
+      </button>
+
+      <div class="sep"></div>
+
+      <button class="open" id="openApp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M14 4h6v6" />
+          <path d="M20 4 11 13" />
+          <path d="M18 14.5V18a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 4 18V9a2.5 2.5 0 0 1 2.5-2.5H10" />
+        </svg>
+        Open Gather
+      </button>
+
+      <footer>
+        <span class="dot" id="dot"></span>
+        <span id="status">Checking…</span>
+      </footer>
+
+      <p class="note" id="note"></p>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

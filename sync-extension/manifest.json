@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "Gather Capture",
+  "version": "1.4.9",
+  "description": "Capture pages and regions, save links, and sync bookmarks, Instagram saves, and X bookmarks into your local Gather library.",
+  "permissions": [
+    "bookmarks",
+    "storage",
+    "alarms",
+    "tabs",
+    "activeTab",
+    "scripting",
+    "idle"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1/*",
+    "https://x.com/*",
+    "https://twitter.com/*",
+    "https://www.instagram.com/*",
+    "https://cdn.syndication.twimg.com/*",
+    "https://*.pinterest.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Gather Capture"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*",
+        "https://twitter.com/*"
+      ],
+      "js": [
+        "content/x.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.instagram.com/*"
+      ],
+      "js": [
+        "content/instagram.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://*.pinterest.com/*"
+      ],
+      "js": [
+        "content/pinterest.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
